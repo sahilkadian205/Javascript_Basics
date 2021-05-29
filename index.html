@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #container{
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        #outer{
+            width: 40%;
+            height: 20px;
+            background-color: grey;
+            display: inline-block;
+            border-radius: 20px;
+        }
+        #inner{
+            width:0%;
+            background-color: green;
+            height: 20px;
+            text-align: right;
+            border-radius: 20px;
+        }
+        #btn2{
+            height: 30px;
+            width: 50px;
+            margin: auto;
+            display:flex;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   <div id="container">
+        <div id="outer">
+            <div id="inner">0%</div>
+        </div>
+        <button onclick="progessBar()">Click</button>
+   </div>
+   <button id="btn2" onclick="startCounting()">0</button>
+   <script>
+       var btnCount = 0;
+       function progessBar(){
+           var ele = document.getElementById("inner");
+           var width = 0;
+           var i = setInterval(move,100);
+            function move(){
+                if(width >= 100){
+                    clearInterval(i);
+                }
+                else{
+                    width++;
+                ele.style.width = width +"%";
+                ele.innerHTML = width + "%";
+                }
+                
+            }
+       }
+       function startCounting(){
+            document.getElementById("btn2").innerHTML = ++btnCount;
+       }
+   </script>
+   <script src="scripttemp.js"></script>
+</body>
+</html>
