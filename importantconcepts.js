@@ -63,3 +63,7 @@ for(key in obj2){
 
 const propertyName = 'age';   //This value can change
 console.log(obj2[propertyName]);
+
+//5.When we use callback function in a parameter we simply pass the reference of that function or define anonymously in parameter but never calls it-
+//function print(callback())  -this is wrong
+//function print(callback) -this is right
